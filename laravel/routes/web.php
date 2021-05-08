@@ -15,5 +15,5 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', [LoginController::class, 'index'])->middleware('logado');
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->middleware('logado');
 Route::post('/login', [LoginController::class, 'entrar'])->name('login');

@@ -16,15 +16,11 @@ class LoginService
         try {
             $request->autenticaAdmin();
             return RouteServiceProvider::HOME_ADMIN;
-        } catch (ValidationException $e) {
+        } catch (ValidationException) {
             $request->autenticaAluno();
             return RouteServiceProvider::HOME_ALUNO;
-        } catch (ValidationException $e) {
-            throw $e;
         }
     }
-
-
 
     public static function logout(string $perfil): void
     {

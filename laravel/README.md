@@ -79,7 +79,8 @@ ou
 
 ## Áreas Restritas
 
-O sistema possui 2 áreas restritas, aluno e administrador.
+O sistema possui 2 áreas restritas, aluno e administrador, porém o acesso é unificado, identificando automaticamente
+o tipo de usuário.
 
 ### Administrador
 
@@ -100,4 +101,6 @@ Atribuições:
 - Alterar dados pessoais
 - Matricular-se em cursos disponíveis
 
-> Acesso: http://localhost/aluno
+> Acesso: http://localhost
+> 
+> A senha de todos os alunos criados pelo seeder é: teste

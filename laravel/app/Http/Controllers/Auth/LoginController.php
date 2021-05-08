@@ -16,12 +16,10 @@ class LoginController extends Controller
         private LoginService $loginService
     ){}
 
-
     public function index(): Response
     {
         return Inertia::render('Auth/Login');
     }
-
 
     public function entrar(LoginRequest $request): RedirectResponse
     {
