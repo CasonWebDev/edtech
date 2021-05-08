@@ -46,6 +46,15 @@ dentro do container docker execute o comando:
 php artisan migrate
 ```
 
+Para gerenciar toda parte de autenticação de usuário utilizei o [Laravel Blaze](https://laravel.com/docs/8.x/starter-kits#laravel-breeze)
+esse pacote além de lidar com a autenticação já faz toda configuração pra uso do VUE com Inertia e Ziggy no Front-End
+
+Após rodar as migrations realizar os comandos a seguir para instalar os pacotes Node necessários e realizar a compilação do Front-End
+
+```
+npm install
+npm run dev
+```
 Esse projeto foi iniciado utilizando [Laravel Sail](https://laravel.com/docs/8.x/sail)
 
 Logo é possível executar os comandos dentro de um container sem necessariamente estar dentro dele, ex:
@@ -79,7 +88,7 @@ Atribuíções:
 - CRUD de Alunos
 - CRUD de Matrículas
 
-> Acesso: http://localhost/admin
+> Acesso: http://localhost
 > 
 > Login: admin@localhost.com
 > 

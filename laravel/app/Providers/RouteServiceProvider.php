@@ -11,13 +11,22 @@ use Illuminate\Support\Facades\Route;
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * The path to the "home" route for your application.
+     * Caminho da rota "home_admin" da aplicação
      *
-     * This is used by Laravel authentication to redirect users after login.
+     * Usado para redirecionar o admin após login bem sucedido
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME_ADMIN = 'admin.dashboard';
+
+    /**
+     * Caminho da rota "home_aluno" da aplicação
+     *
+     * Usado para redirecionar o aluno após login bem sucedido
+     *
+     * @var string
+     */
+    public const HOME_ALUNO = 'aluno.dashboard';
 
     /**
      * The controller namespace for the application.
@@ -46,6 +55,14 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/admin.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/alunos.php'));
         });
     }
 

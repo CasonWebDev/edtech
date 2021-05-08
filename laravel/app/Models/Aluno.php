@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\hasMany;
 
-class Aluno extends Model
+class Aluno extends Authenticatable
 {
     use HasFactory;
+
+    protected $guard = 'aluno';
 
     protected $fillable = [
         'nome',
@@ -16,8 +18,22 @@ class Aluno extends Model
         'senha'
     ];
 
+    protected $hidden = [
+        'senha'
+    ];
+
     public function matricula(): hasMany
     {
         return $this->hasMany(Matricula::class);
+    }
+
+    public function getAuthPassword()
+    {
+        return $this->senha;
+    }
+
+    public function getGuard(): string
+    {
+        return $this->guard;
     }
 }
