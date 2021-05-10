@@ -59,11 +59,19 @@ docker exec -it {nome_container_app} bash
 composer install
 ```
 
+ou utilizando Sail
+
+```
+./vendor/bin/sail composer install
+```
+
 Claro, será necessário subir as migrations para que as tabelas sejam criadas no banco de dados,
 dentro do container docker execute o comando:
 
 ```
 php artisan migrate
+ou
+./vendor/bin/sail artisan migrate
 ```
 
 Para gerenciar toda parte de autenticação de usuário utilizei o [Laravel Blaze](https://laravel.com/docs/8.x/starter-kits#laravel-breeze)
@@ -80,7 +88,7 @@ Esse projeto foi iniciado utilizando [Laravel Sail](https://laravel.com/docs/8.x
 Logo é possível executar os comandos dentro de um container sem necessariamente estar dentro dele, ex:
 
 ```
-./vendor/bin/sail artisan migrate
+./vendor/bin/sail artisan
 ```
 
 Terá o mesmo efeito.
@@ -93,6 +101,21 @@ php artisan db:seed
 ou
 ```
 ./vendor/bin/sail artisan db:seed
+```
+
+Para garantir funcionamento ainda há 2 coisas a serem feitas.
+
+Primeiro dar permissão de escrita para a pasta storage e no arquivo .env, entre no container e execute:
+
+```
+chmod 777 -R storage/
+chmod 777 .env
+```
+
+Pra finalizar, você precisará gerar uma Key para isso execute o comando
+
+```
+./vendor/bin/sail artisan key:generate
 ```
 
 > Se tudo der certo já será possível acessar a aplicação pela url: http://localhost sem erros
