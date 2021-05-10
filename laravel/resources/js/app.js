@@ -4,6 +4,8 @@ require('./bootstrap');
 import { createApp, h } from 'vue';
 import { App as InertiaApp, plugin as InertiaPlugin } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
+import 'vue-universal-modal/dist/index.css'
+import VueUniversalModal from 'vue-universal-modal';
 
 const el = document.getElementById('app');
 
@@ -16,6 +18,9 @@ createApp({
 })
     .mixin({ methods: { route } })
     .use(InertiaPlugin)
+    .use(VueUniversalModal, {
+        teleportTarget: '#modals'
+    })
     .mount(el);
 
 InertiaProgress.init({ color: '#4B5563' });

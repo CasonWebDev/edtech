@@ -12,7 +12,8 @@ module.exports = {
         fill: {
             primarySvgLogo: '#ff0006',
             secundarySvgLogo: '#ff7600',
-            thirdSvgLogo: '#ffcb00'
+            thirdSvgLogo: '#ffcb00',
+            white: '#ffffff'
         },
         extend: {
             fontFamily: {

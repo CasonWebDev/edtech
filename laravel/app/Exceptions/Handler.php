@@ -40,12 +40,12 @@ class Handler extends ExceptionHandler
         });
     }
 
-    public function render($request, Exception|Throwable $exception)
+    public function render($request, Exception|Throwable $e)
     {
-        if($exception instanceof \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException){
+        if($e instanceof \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException){
             return abort('404');
         }
 
-        return parent::render($request, $exception);
+        return parent::render($request, $e);
     }
 }

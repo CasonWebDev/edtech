@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Services;
+namespace App\Http\Services\Auth;
 
 
 use App\Http\Requests\Auth\LoginRequest;

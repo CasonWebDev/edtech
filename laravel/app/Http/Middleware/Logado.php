@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Http\Services\LoginService;
 use Closure;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
