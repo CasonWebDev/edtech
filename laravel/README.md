@@ -6,7 +6,27 @@
 - Testes unitário, PSR-12 contam pontos a mais
 - Para o front fique a vontade entre usar Vue.js ou somente as blades do Laravel
 
+### Observações
 
+Eu tentei caprichar ao máximo em relação a funcionalidades, porém por conta do pouco tempo disponível (apenas um fim de semana)
+acabei entregando menos do que gostaria, eu não consegui implementar os testes automatizados, eram fáceis pelo projeto proposto,
+mas acabei focando nas funcionalidades.
+
+Também não fiz implementação de interfaces de nenhum tipo, não me pareceu um cenário onde se justificasse a aplicação dessa camada.
+
+Tendo essas observações em vista, sigamos ao projeto:
+
+### Tecnologias
+
+Para desenvolver esse projeto eu utilizei:
+- Laravel 8.0
+- PHP 8.0
+- Laravel Sail (Docker)
+- Laravel Breeze (Autenticação)
+- InertiaJS
+- VueJS
+- Ziggy
+- MySQL
 
 ## Instalação
 
