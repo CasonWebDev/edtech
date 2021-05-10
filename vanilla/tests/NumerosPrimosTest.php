@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
 use App\NumerosPrimos;
+use PHPUnit\Framework\TestCase;
 
 class NumerosPrimosTest extends TestCase
 {
